@@ -1,9 +1,10 @@
-# Added deployment and utility scripts
+## Added deployment and utility scripts
 
 <p>This is a fork of the main ERC-3643 repository to which I have added some useful scripts (deployment, transfer, burn, freeze, unfreeze, etc.) in scripts/</p>
 <p>There is also the proper hardhat.config.ts with the required dependencies</p>
-<br><br>
-To use (Sepolia deployment example):<br>
+
+To use (Sepolia deployment example):
+
 - (install NodeJS 24.x)
 - curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
 - sudo apt-get install -y nodejs 
