@@ -1,3 +1,44 @@
+# Added deployment and utility scripts
+
+<p>This is a fork of the main ERC-3643 repository to which I have added some useful scripts (deployment, transfer, burn, freeze, unfreeze, etc.) in scripts/</p>
+<p>There is also the proper hardhat.config.ts with the required dependencies</p>
+<br><br>
+To use (Sepolia deployment example):<br>
+* (install NodeJS 24.x)
+* curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
+* sudo apt-get install -y nodejs 
+* (clone this repository)
+* git clone https://github.com/alfydev/ERC-3643.git
+* cd ERC-3643
+* npm install 
+* npm ci
+* npm install --save-dev hardhat
+* npx hardhat compile 
+* npx hardhat test
+* npm install dotenv
+* npm install @onchain-id/solidity
+* npm install --save-dev @nomiclabs/hardhat-ethers ethers
+* npm install --save-dev hardhat-dependency-compiler 
+* (create .env with PRIVATE_KEY and SEPOLIA_RPC_URL)
+* (replace hardhat.config.ts with the one provided)
+* mv ./hardhat.config.ts ./hardhat.config.ts.bak && mv scripts/hardhat.config.ts .
+* npx hardhat compile
+* npx hardhat run scripts/deployFactory.js --network sepolia
+* (replace the appropriate 0x... constant in scripts/linkTrexToIdFactory.js)
+* npx hardhat run scripts/linkTrexToIdFactory.js --network sepolia
+* (replace the appropriate 0x... constant in scripts/deployToken.js)
+* npx hardhat run scripts/deployToken.js --network sepolia
+* (replace the appropriate 0x... constant in scripts/01_deployIdentity.js)
+* npx hardhat run scripts/01_deployIdentity.js --network sepolia
+* (replace the appropriate 0x... constant in scripts/02_registerIdentity)
+* npx hardhat run scripts/02_registerIdentity.js --network sepolia
+* (replace the appropriate 0x... constant in scripts/03_mintTestTokens)
+* npx hardhat run scripts/03_mintTestTokens.js --network sepolia
+* (replace the appropriate 0x... constant in scripts/unpauseToken.js)
+* npx hardhat run scripts/unpauseToken.js --network sepolia
+* (then experiment with the other scripts; don't forget to edit the constants each time)
+<br><hr><br>
+
 # T-REX : Token for Regulated EXchanges
 
 ![GitHub](https://img.shields.io/github/license/ERC-3643/ERC-3643?color=green)
